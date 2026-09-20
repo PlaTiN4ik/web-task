@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №1</title>
+    <style>
+        form p {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Задание №1.</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Список гиперссылок</h2>
+            <ul>
+                <li><a href="http://kubsu.ru/">1. Абсолютная ссылка на главную страницу kubsu.ru (http)</a></li>
+                <li><a href="https://kubsu.ru/">2. Абсолютная ссылка на главную страницу kubsu.ru (https)</a></li>
+                <li>
+                    <a href="https://kubsu.ru/">
+                        <img src="Logotip.jpg" alt="Логотип КубГУ" width="150" height="150">
+                    </a>
+                </li>
+                <li><a href="/about.html">4. Сокращенная ссылка на внутреннюю страницу</a></li>
+                <li><a href="/">5. Сокращенная ссылка на главную страницу</a></li>
+                <li><a href="#anchor-section">6. Ссылка на фрагмент текущей страницы</a></li>
+                <li><a href="https://example.com/page?param1=val1&amp;param2=val2&amp;param3=val3">7. Ссылка с 3 параметрами в URL</a></li>
+                <li><a href="https://example.com/page?id=123">8. Ссылка с параметром id в URL</a></li>
+                <li><a href="in_that_katalog.html">9. Относительная на страницу в текущем каталоге</a></li>
+                <li><a href="about/about.html">10. Относительная на страницу в каталоге about</a></li>
+                <li><a href="../page.html">11. Относительная на страницу уровнем выше</a></li>
+                <li><a href="../../page.html">12. Относительная на страницу двумя уровнями выше</a></li>
+                <li>13. Это абзац текста, в котором есть <a href="https://kubsu.ru/">контекстная ссылка</a> на сайт КубГУ.</li>
+                <li><a href="https://ru.wikipedia.org/wiki/HTML#История">14. Ссылка на фрагмент страницы стороннего сайта</a></li>
+                <li>
+                    15. Ссылка на фрагмент изображения <br>
+                    <img src="map.png" alt="Интерактивная карта" usemap="#myMap" style="max-width: 100%; height: auto; display: block; margin-top: 8px;">
+                    <map name="myMap">
+                        <area shape="rect" coords="12,81,372,261" href="https://kubsu.ru/" alt="Прямоугольник" title="Переход на КубГУ">
+                        <area shape="circle" coords="703,170,90" href="https://example.com/" alt="Круг" title="Переход на Example">
+                    </map>
+                </li>
+                <li><a href="">16. Ссылка с пустым href</a></li>
+                <li><a>17. Ссылка без href</a></li>
+                <li><a href="https://example.com" rel="nofollow">18. Ссылка, по которой запрещен переход поисковикам (nofollow)</a></li>
+                <li><a href="https://example.com/" rel="noindex">19. Ссылка, запрещенная для индексации (noindex)</a></li>
+                <li>
+                    20. Нумерованный список ссылок с атрибутом title:
+                    <ol style="margin-top: 4px; margin-bottom: 4px;">
+                        <li><a href="https://kubsu.ru/" title="Официальный сайт КубГУ">КубГУ</a></li>
+                        <li><a href="https://example.com/" title="Демонстрационный сайт Example">Example</a></li>
+                    </ol>
+                </li>
+                <li><a href="ftp://user:password@host/file.txt">21. Ссылка на файл на FTP-сервере с авторизацией</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Форма</h2>
+            <form action="#" method="post">
+                <p>
+                    <label for="fio">ФИО:</label><br>
+                    <input type="text" id="fio" name="fio" placeholder="Иванов Иван Иванович" required>
+                </p>
+
+                <p>
+                    <label for="phone">Телефон:</label><br>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (999) 000-00-00" required>
+                </p>
+
+                <p>
+                    <label for="email">E-mail:</label><br>
+                    <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+                </p>
+
+                <p>
+                    <label for="dob">Дата рождения:</label><br>
+                    <input type="date" id="dob" name="dob" value="2005-01-01" required>
+                </p>
+
+                <p>
+                    Пол:<br>
+                    <label><input type="radio" name="gender" value="male" checked> Мужской</label>
+                    <label><input type="radio" name="gender" value="female"> Женский</label>
+                </p>
+
+                <p>
+                    <label for="languages">Любимый язык программирования:</label><br>
+                    <select id="languages" name="languages[]" multiple size="6" required>
+                        <option value="pascal">Pascal</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="js">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="haskel">Haskel</option>
+                        <option value="clojure">Clojure</option>
+                        <option value="prolog">Prolog</option>
+                        <option value="scala">Scala</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="bio">Биография:</label><br>
+                    <textarea id="bio" name="bio" rows="5" cols="30" placeholder="Расскажите о себе..."></textarea>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" name="contract" required> С контрактом ознакомлен(а)
+                    </label>
+                </p>
+
+                <p>
+                    <input type="submit" value="Сохранить">
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <h2 id="anchor-section">Фрагмент страницы </h2>
+    </footer>
+</body>
+</html>
