@@ -1,0 +1,179 @@
+/* Базовые сбросы */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* 1. Шапка (тянущаяся на 100% ширины) */
+header {
+    width: 100%;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 15px 0;
+}
+
+/* Контейнер в шапке (960px с центрированием) */
+.header-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-title-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+/* Навигация (nav) */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: #34495e;
+    transition: background-color 0.2s;
+}
+
+nav a:hover {
+    background-color: #1abc9c;
+}
+
+/* 2. Основной контент (max-width: 960px, по центру) */
+main {
+    max-width: 960px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+h2 {
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 8px;
+    color: #2c3e50;
+}
+
+/* Списки */
+ul, ol {
+    line-height: 1.6;
+}
+
+/* 3. Таблица (четкие границы + зебра) */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+.data-table th, 
+.data-table td {
+    border: 1px solid #dcdcdc;
+    padding: 10px 14px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Чередование строк (зебра) */
+.data-table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.data-table tbody tr:hover {
+    background-color: #eef2f7;
+}
+
+/* 4. Форма */
+form p {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #34495e;
+}
+
+/* 5. Подвал (100% ширины) */
+footer {
+    width: 100%;
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+}

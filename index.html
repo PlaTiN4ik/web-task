@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задание №1</title>
-    <style>
-        form p {
-            margin-bottom: 12px;
-        }
-    </style>
+    <title>Задание №2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Тянущаяся шапка -->
     <header>
-        <h1>Задание №1.</h1>
+        <div class="header-container">
+            <div class="logo-title-block">
+                <img src="Logotip.jpg" alt="Логотип КубГУ" class="logo-img">
+                <h1 class="site-title">Кубанский Гос. Университет</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#links-section">Ссылки</a></li>
+                    <li><a href="#table-section">Таблица</a></li>
+                    <li><a href="#form-section">Форма</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
+    <!-- Основной контент (центрирование 960px) -->
     <main>
-        <section>
+        <!-- Секция ссылок из Лабы 1 -->
+        <section id="links-section">
             <h2>Список гиперссылок</h2>
             <ul>
                 <li><a href="http://kubsu.ru/">1. Абсолютная ссылка на главную страницу kubsu.ru (http)</a></li>
                 <li><a href="https://kubsu.ru/">2. Абсолютная ссылка на главную страницу kubsu.ru (https)</a></li>
                 <li>
                     <a href="https://kubsu.ru/">
-                        <img src="Logotip.jpg" alt="Логотип КубГУ" width="150" height="150">
+                        <img src="Logotip.jpg" alt="Логотип КубГУ" width="120" height="120">
                     </a>
                 </li>
                 <li><a href="/about.html">4. Сокращенная ссылка на внутреннюю страницу</a></li>
@@ -60,41 +72,94 @@
             </ul>
         </section>
 
-        <hr>
+        <!-- Таблица по Заданию 2 -->
+        <section id="table-section">
+            <h2>Таблица данных</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>ФИО студента</th>
+                        <th>Группа</th>
+                        <th>Оценка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">1</td>
+                        <td>Иванов Иван Иванович</td>
+                        <td>ПИ-201</td>
+                        <td>Отлично</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><em>Примечание: Староста группы</em></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Петров Петр Петрович</td>
+                        <td>ПИ-201</td>
+                        <td>Хорошо</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Сидоров Сидор Сидорович</td>
+                        <td>ПИ-201</td>
+                        <td>Отлично</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Алексеев Алексей Алексеевич</td>
+                        <td>ПИ-202</td>
+                        <td>Зачет</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Васильев Василий Васильевич</td>
+                        <td>ПИ-202</td>
+                        <td>Хорошо</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-        <section>
-            <h2>Форма</h2>
+        <!-- Форма -->
+        <section id="form-section">
+            <h2>Форма обратной связи</h2>
             <form action="#" method="post">
                 <p>
+                    <label for="fullname">ФИО:</label>
                     <input 
-  type="text" 
-  name="fullname" 
-  placeholder="Иванов Иван Иванович" 
-  pattern="[A-Za-zА-Яа-яЁё\s\-]+" 
-  title="Разрешены только буквы" 
-  onkeydown="return /[a-zA-Zа-яА-ЯёЁ\s\-]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
-  required
->
+                        type="text" 
+                        id="fullname"
+                        name="fullname" 
+                        placeholder="Иванов Иван Иванович" 
+                        pattern="[A-Za-zА-Яа-яЁё\s\-]+" 
+                        title="Разрешены только буквы" 
+                        onkeydown="return /[a-zA-Zа-яА-ЯёЁ\s\-]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
+                        required
+                    >
                 </p>
                 <p>
-                  <input 
-  type="tel" 
-  name="phone" 
-  placeholder="+7 (999) 000-00-00" 
-  pattern="[\+0-9\s\-\(\)]+" 
-  title="Разрешены только цифры и знаки +, -, скобки" 
-  onkeydown="return /[0-9\+\-\(\)\s]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
-  required
->
+                    <label for="phone">Телефон:</label>
+                    <input 
+                        type="tel" 
+                        id="phone"
+                        name="phone" 
+                        placeholder="+7 (999) 000-00-00" 
+                        pattern="[\+0-9\s\-\(\)]+" 
+                        title="Разрешены только цифры и знаки +, -, скобки" 
+                        onkeydown="return /[0-9\+\-\(\)\s]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
+                        required
+                    >
                 </p>
 
                 <p>
-                    <label for="email">E-mail:</label><br>
+                    <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
                 </p>
 
                 <p>
-                    <label for="dob">Дата рождения:</label><br>
+                    <label for="dob">Дата рождения:</label>
                     <input type="date" id="dob" name="dob" value="2005-01-01" required>
                 </p>
 
@@ -105,7 +170,7 @@
                 </p>
 
                 <p>
-                    <label for="languages">Любимый язык программирования:</label><br>
+                    <label for="languages">Любимый язык программирования:</label>
                     <select id="languages" name="languages[]" multiple size="6" required>
                         <option value="pascal">Pascal</option>
                         <option value="c">C</option>
@@ -122,8 +187,8 @@
                 </p>
 
                 <p>
-                    <label for="bio">Биография:</label><br>
-                    <textarea id="bio" name="bio" rows="5" cols="30" placeholder="Расскажите о себе..."></textarea>
+                    <label for="bio">Биография:</label>
+                    <textarea id="bio" name="bio" rows="5" placeholder="Расскажите о себе..."></textarea>
                 </p>
 
                 <p>
@@ -139,8 +204,12 @@
         </section>
     </main>
 
-    <footer>
-        <h2 id="anchor-section">Фрагмент страницы </h2>
+    <!-- Тянущийся подвал -->
+    <footer id="anchor-section">
+        <div class="footer-container">
+            <p>(c) Сергей Синица 2026</p>
+        </div>
     </footer>
+
 </body>
 </html>
