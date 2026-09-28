@@ -66,13 +66,26 @@
             <h2>Форма</h2>
             <form action="#" method="post">
                 <p>
-                    <label for="fio">ФИО:</label><br>
-                    <input type="text" id="fio" name="fio" placeholder="Иванов Иван Иванович" required>
+                    <input 
+  type="text" 
+  name="fullname" 
+  placeholder="Иванов Иван Иванович" 
+  pattern="[A-Za-zА-Яа-яЁё\s\-]+" 
+  title="Разрешены только буквы" 
+  onkeydown="return /[a-zA-Zа-яА-ЯёЁ\s\-]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
+  required
+>
                 </p>
-
                 <p>
-                    <label for="phone">Телефон:</label><br>
-                    <input type="tel" id="phone" name="phone" placeholder="+7 (999) 000-00-00" required>
+                  <input 
+  type="tel" 
+  name="phone" 
+  placeholder="+7 (999) 000-00-00" 
+  pattern="[\+0-9\s\-\(\)]+" 
+  title="Разрешены только цифры и знаки +, -, скобки" 
+  onkeydown="return /[0-9\+\-\(\)\s]/i.test(event.key) || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab';" 
+  required
+>
                 </p>
 
                 <p>
